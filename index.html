@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Spin-a-wheel</title>
+
+    <!-- Connect the CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Website Header -->
+    <header>
+        <h1>Spin-a-wheel</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Spinning Wheel Section -->
+        <section id="wheel-section">
+            <h2>Spin the Wheel</h2>
+
+            <div id="wheel-container">
+                <canvas id="wheel" width="400" height="400">
+                    Your browser does not support HTML Canvas.
+                </canvas>
+            </div>
+
+            <button id="spin-button">SPIN!</button>
+
+            <p id="result">Your result will appear here!</p>
+        </section>
+
+        <!-- Options Section -->
+        <section id="options-section">
+            <h2>Your Options</h2>
+
+            <form id="option-form">
+                <label for="option-input">Enter an option:</label>
+
+                <input type="text" id="option-input" placeholder="e.g. The name of somebody">
+
+                <button type="submit">Add Option</button>
+                <button type="button" id="clear-button">Clear All</button>
+            </form>
+
+            <ul id="option-list">
+                <!-- Insert pre-loaded options here -->
+            </ul>
+        </section>
+
+    </main>
+    <p>Version 1.0.0</p>
+
+    <!-- Connect the JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

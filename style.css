@@ -1,0 +1,255 @@
+
+/* =========================
+   1. General Page Styling
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f3ff;
+    color: #1f2937;
+    text-align: center;
+}
+
+/* =========================
+   2. Website Header
+========================= */
+
+header {
+    background-color: #6d28d9;
+    color: white;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+/* =========================
+   3. Main Layout
+========================= */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 35px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#wheel-section {
+    flex: 1.2;
+    min-width: 0;
+}
+
+#options-section {
+    flex: 0.8;
+    min-width: 0;
+}
+
+h2 {
+    color: #6d28d9;
+    margin-top: 0;
+}
+
+/* =========================
+   4. Spinning Wheel
+========================= */
+
+#wheel-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    margin: 20px auto;
+}
+
+#wheel {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Pointer at the top of the wheel */
+
+#wheel-container::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #ef4444;
+    z-index: 1;
+}
+
+/* =========================
+   5. Buttons
+========================= */
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#spin-button {
+    background-color: #7c3aed;
+    color: white;
+    font-size: 18px;
+    padding: 15px 40px;
+}
+
+#spin-button:hover {
+    background-color: #5b21b6;
+    transform: scale(1.05);
+}
+
+#spin-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#option-form button {
+    background-color: #059669;
+    color: white;
+}
+
+#option-form button:hover {
+    background-color: #047857;
+}
+
+#option-form #clear-button {
+    background-color: #ef4444;
+    color: white;
+}
+
+#option-form #clear-button:hover {
+    background-color: #dc2626;
+}
+
+#option-form #clear-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Keyboard accessibility */
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+/* =========================
+   6. Result Text
+========================= */
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #6d28d9;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   7. Option Input Form
+========================= */
+
+#option-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+#option-form label {
+    font-weight: bold;
+}
+
+#option-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd6fe;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#option-input:focus {
+    border-color: #7c3aed;
+    outline: none;
+}
+
+/* =========================
+   8. Options List
+========================= */
+
+#option-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#option-list li {
+    background-color: #ede9fe;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   9. Mobile Responsive Design
+========================= */
+
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    #wheel-section,
+    #options-section {
+        width: 100%;
+    }
+
+    #wheel-container {
+        max-width: 320px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+}
