@@ -1,3 +1,3 @@
 ﻿# Spin-a-wheel
  
-# Vibe-coded with ChatGPT, then later Claude
+# A basic application that is entirely vibe-coded with ChatGPT, then later Claude
